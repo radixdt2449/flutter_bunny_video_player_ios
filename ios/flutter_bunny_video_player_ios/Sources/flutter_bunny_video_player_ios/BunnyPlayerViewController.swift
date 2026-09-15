@@ -62,6 +62,7 @@ class BunnyPlayerViewController: UIViewController {
 
         let hostingController = UIHostingController(rootView: playerView)
         addChild(hostingController)
+        hostingController.view.backgroundColor = .clear
         // Auto layout to match Flutter size
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(hostingController.view)
