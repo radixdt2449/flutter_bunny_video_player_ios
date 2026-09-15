@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "flutter-bunny-video-player-ios", targets: ["flutter_bunny_video_player_ios"])
     ],
     dependencies: [
-        .package(url: "https://github.com/radixdt2449/bunny-stream-ios.git", revision: "1e0554505075583efad4f0d9eae70763ee8718fc")
+        .package(url: "https://github.com/radixdt2449/bunny-stream-ios.git", revision: "e482a9f41d86e53219ff24d78390754eca8fd151")
     ],
     targets: [
         .target(
