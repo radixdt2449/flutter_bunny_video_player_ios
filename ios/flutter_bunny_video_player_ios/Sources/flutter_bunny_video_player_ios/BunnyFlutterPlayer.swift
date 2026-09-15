@@ -31,5 +31,11 @@ struct BunnyFlutterPlayer: View {
             cacheKey: cacheKey,
             onPlayerReady: onPlayerReady
         )
+        .environment(\.videoPlayerConfig, VideoPlayerConfig(
+            controls: VideoPlayerConfig.Control.allCases.filter {
+                $0 != .fullScreen && $0 != .pip
+            }
+        ))
+        .background(Color.clear) // Prevent white flash during video load
     }
 }
