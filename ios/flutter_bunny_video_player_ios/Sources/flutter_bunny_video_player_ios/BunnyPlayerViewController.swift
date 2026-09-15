@@ -76,23 +76,6 @@ class BunnyPlayerViewController: UIViewController {
        // hostingController.didMove(toParent: self)
     }
 
-        // ── Orientation lock ──────────────────────────────────────────────────────
-    // Forces the fullScreenCover modal to stay in landscape.
-    // iOS asks the presenting view controller for supported orientations —
-    // overriding here propagates to any modal presented from this VC.
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscape
-    }
-
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return .landscapeRight
-    }
-
-    override var shouldAutorotate: Bool {
-        return false
-    }
-
     func cleanup() {
         NSLog("🧹 [BunnyPlayer] cleanup() called — videoId: %@, children: %d", videoId, children.count)
         if let player = avPlayer {
