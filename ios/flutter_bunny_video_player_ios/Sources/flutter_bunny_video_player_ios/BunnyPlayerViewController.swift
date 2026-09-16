@@ -114,6 +114,19 @@ class BunnyPlayerViewController: UIViewController {
         NSLog("🧹 [BunnyPlayer] cleanup() done")
     }
 
+    func currentPositionSeconds() -> Double {
+        guard let player = avPlayer else { return 0 }
+        let seconds = player.currentTime().seconds
+        return seconds.isNaN || seconds.isInfinite ? 0 : seconds
+    }
+
+    func durationSeconds() -> Double {
+        guard let player = avPlayer,
+          let duration = player.currentItem?.duration.seconds,
+          !duration.isNaN, !duration.isInfinite else { return 0 }
+        return duration
+    }
+
     deinit {
         NSLog("⚫️ [BunnyPlayer] BunnyPlayerViewController deinit — videoId: %@", videoId)
     }
