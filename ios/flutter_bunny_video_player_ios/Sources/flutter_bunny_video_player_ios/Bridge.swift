@@ -68,6 +68,12 @@ class BunnyPlayerPlatformView: NSObject, FlutterPlatformView {
             _channel?.setMethodCallHandler(nil)
             _channel = nil
             result(nil)
+        case "getCurrentPosition":
+            let seconds = Int(_controller.currentPositionSeconds())
+            result(seconds)
+        case "getDuration":
+            let seconds = Int(_controller.durationSeconds())
+            result(seconds)
         default:
             result(FlutterMethodNotImplemented)
         }
