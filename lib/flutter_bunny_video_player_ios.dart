@@ -23,6 +23,26 @@ class BunnyPlayerController {
     }
     _channel = null;
   }
+
+  Future<int> getCurrentPosition() async {
+    if (_disposed || _channel == null) return 0;
+    try {
+      final result = await _channel!.invokeMethod<int>('getCurrentPosition');
+      return result ?? 0;
+    } catch (_) {
+      return 0;
+    }
+  }
+
+  Future<int> getDuration() async {
+    if (_disposed || _channel == null) return 0;
+    try {
+      final result = await _channel!.invokeMethod<int>('getDuration');
+      return result ?? 0;
+    } catch (_) {
+      return 0;
+    }
+  }
 }
 
 class BunnyIosPlayerView extends StatefulWidget {
